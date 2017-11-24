@@ -2,11 +2,11 @@ def eval_cost(solution, target):
     return sum(solution) - target
 
 
-def get_combo(lst, n):
+def get_combo(items, n):
     if n:
-        if len(lst):
-            c = map(lambda x: [lst[0]] + x, get_combo(lst, n-1))
-            return list(c) + get_combo(lst[1:], n)
+        if len(items):
+            c = map(lambda x: [items[0]] + x, get_combo(items, n - 1))
+            return list(c) + get_combo(items[1:], n)
         return []
     else:
         return [[]]
